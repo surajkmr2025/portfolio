@@ -72,7 +72,7 @@ export default function Sidebar(): React.ReactElement {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (isMobileMenuOpen && !target.closest(".mobile-sidebar") && !target.closest('.mobile-menu-toggel')) {
+      if (isMobileMenuOpen && !target.closest(".mobile-sidebar") && !target.closest('.mobile-menu-toggle')) {
         setIsMobileMenuOpen(false)
       }
     };
@@ -137,7 +137,7 @@ export default function Sidebar(): React.ReactElement {
         <div className={s.mobileTopNavInner}>
           <div className={s.mobileAvatarContainer}>
             <div className={s.mobileAvatar}>
-              <Image src="/Hexagon.png" alt="Suraj Avatar" width={40} height={40} className={s.mobileAvatarImage} priority />
+              <Image src="/Hexagon.png" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatarImage} priority />
             </div>
             <div>
               <div className={s.mobileName}>Suraj Kumar
@@ -155,7 +155,7 @@ export default function Sidebar(): React.ReactElement {
 
         <div className={s.desktopAvatarContainer}>
           <div className={s.desktopAvatar}>
-            <Image src="/Hexagon.png" alt="Suraj Avatar" width={48} height={48} className={s.desktopAvatarImage} priority />
+            <Image src="/Hexagon.png" alt="Suraj Kumar" width={48} height={48} className={s.desktopAvatarImage} priority />
 
           </div>
 
@@ -176,7 +176,7 @@ export default function Sidebar(): React.ReactElement {
                 <Link href={href} className={`${s.navItem} ${pathname === href ? s.navItemActive : s.navItemInactive}`} aria-current={
                   pathname === href ? "page" : undefined
                 }>
-                  <Icon className={s.navItem} />
+                  <Icon className={s.navIcon} />
                   <span className={s.navLabel}>{label}</span>
                 </Link>
               </li>
@@ -190,7 +190,7 @@ export default function Sidebar(): React.ReactElement {
             {
               socials.map((soc) => (
                 <li key={soc.label}>
-                  <a href={soc.href} className={s.socialItem} title={soc.label} rel="noopenernoreferrer" target="_blank">
+                  <a href={soc.href} className={s.socialItem} title={soc.label} rel="noopener noreferrer" target="_blank">
                     <svg className={s.socialIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d={soc.svgPath} />
 
@@ -214,7 +214,7 @@ export default function Sidebar(): React.ReactElement {
             <div className={s.mobileHeaderInner}>
               <div className={s.mobileAvatarContainer}>
                 <div className={s.mobileAvatar}>
-                  <Image src="/Hexagon.png" alt="Suraj Avatar" width={40} height={40} className={s.mobileAvatarImage} priority />
+                  <Image src="/Hexagon.png" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatarImage} priority />
 
                 </div>
                 <div>
@@ -298,7 +298,7 @@ export default function Sidebar(): React.ReactElement {
 
             <div className={s.mobileFooterText}>
               <div>
-                Made by Suraj | © 2026
+                © {new Date().getFullYear()} Suraj Kumar. All rights reserved.
               </div>
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function Sidebar(): React.ReactElement {
               </div>
               <div className={s.bottomNavDivider}></div>
               <button onClick={() => setIsMobileMenuOpen(true)}
-                  className={s.bottomMenuButton}
+                  className={`${s.bottomMenuButton} mobile-menu-toggle`}
                   aria-label="Open Menu"
                 >
                   <MenuIcon className={s.bottomMenuIcon} />

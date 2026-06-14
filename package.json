@@ -12,6 +12,8 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.0.0",
     "clsx": "^2.1.1",
+    "lucide": "^1.3.0",
+    "lucide-react": "^0.562.0",
     "motion": "^12.40.0",
     "next": "^16.2.6",
     "react": "19.2.7",

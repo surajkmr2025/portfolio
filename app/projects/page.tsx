@@ -175,7 +175,7 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="flex gap-1">
             {project.links.archive && (
               <span className={s.archivedText}>
-                Archieved
+                Archived
               </span>
             )}
           </div>

@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-of-suraj.vercel.app/"),
   title: "Suraj Portfolio",
   description: "Personal Portfolio",
 };

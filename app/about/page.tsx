@@ -5,25 +5,25 @@ import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-
 export default function PageName() {
 
 
-  const interests = [
-    "FULL-STACK DEV",
-    "AI ENGINEER",
-    "LLMS",
-    "TRAVEL",
-    "MUSIC",
-    "F1",
-    "READING",
-  ];
+const interests = [
+  "FULL-STACK DEV",
+  "WEB DEVELOPMENT",
+  "DSA",
+  "CRICKET",
+  "READING",
+  "OPEN SOURCE",
+  "TECH",
+];
 
-  const techStack = [
-    "React",
-    "LLM",
-    "Rails",
-    "Next.js",
-    "TypeScript",
-    "Postgres",
-    "Redis",
-  ];
+const techStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "Node.js",
+  "PostgreSQL",
+  "Git",
+];
 
   const email = "surajkumar44727@gmail.com"
 

@@ -18,25 +18,32 @@ export default function Contact() {
   const [sending, setSending] = useState(false);
 
   useEffect(() => {
-    const publicKey = "ESH9QZNKQqLWh1Gpz";
-    if (publicKey) {
-      emailjs.init(publicKey);
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!publicKey) {
+      console.error("EmailJS public key missing");
+      return;
     }
+
+    emailjs.init(publicKey)
+    
   }, []);
+
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
 
-      const templateParams = {
+    const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       subject: formData.subject,
       message: formData.message,
     };
 
-    const serviceId = "service_m2bva5q";
-    const templateId = "template_p01jkeg";
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 
     try {
       if (!serviceId || !templateId) {
@@ -90,14 +97,14 @@ export default function Contact() {
             </h1>
 
             <p className={contactPageStyles.headerSubtitle}>
-              Have a project in mind or just want to say hi? I&apos; d love to hear from you
+              Have a project in mind or just want to say hi? I&apos;d love to hear from you
             </p>
 
           </div>
 
           <div className={contactPageStyles.contactMethodsGrid}>
             <a
-              href="mailto:hexagosservices@gmail.com"
+              href="mailto:surajkumar44727@gmail.com"
               className={contactPageStyles.contactCard}
             >
               <div className={contactPageStyles.contactIconContainer}>
@@ -118,13 +125,13 @@ export default function Contact() {
               <div>
                 <p className={contactPageStyles.contactLabel}>Email</p>
                 <p className={contactPageStyles.contactValue}>
-                 surajkumar44727@gmail.com
+                  surajkumar44727@gmail.com
                 </p>
               </div>
             </a>
 
             <a
-              href="https://twitter.com"
+              href="https://github.com/surajkmr2025"
               target="_blank"
               rel="noopener noreferrer"
               className={contactPageStyles.contactCard}
@@ -135,12 +142,12 @@ export default function Contact() {
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.082-.729.082-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.236-3.22-.124-.304-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 013.003-.404c1.018.005 2.043.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.872.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.624-5.48 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.902-.015 3.297 0 .322.216.694.825.576C20.565 21.795 24 17.295 24 12c0-6.63-5.373-12-12-12z"  />
                 </svg>
               </div>
               <div>
-                <p className={contactPageStyles.contactLabel}>Twitter</p>
-                <p className={contactPageStyles.contactValue}>suraj2020kmr</p>
+                <p className={contactPageStyles.contactLabel}>Github</p>
+                <p className={contactPageStyles.contactValue}>surajkmr2025</p>
               </div>
             </a>
           </div>
@@ -257,9 +264,9 @@ export default function Contact() {
         </div>
 
         <p className={contactPageStyles.alternativeText}>
-          Prefer ro schedule a call? {` `}
-          <a href="#" className={contactPageStyles.alternativeLink}>
-            8700-423-777
+          Prefer to schedule a call? {` `}
+          <a href="tel:+918700423777" className={contactPageStyles.alternativeLink}>
+            +91 8700-423-777
           </a>
         </p>
       </div>

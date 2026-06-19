@@ -288,7 +288,7 @@ export default function Sidebar(): React.ReactElement {
           </div>
           <div className={s.mobileFooter}>
             <Link 
-            href={'/about'}
+            href={'/contact'}
             >
               <div className={s.mobileFooterLabel}>
                 Reach out →

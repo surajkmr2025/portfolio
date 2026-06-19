@@ -287,9 +287,13 @@ export default function Sidebar(): React.ReactElement {
 
           </div>
           <div className={s.mobileFooter}>
-            <div className={s.mobileFooterLabel}>
-              Reach out →
-            </div>
+            <Link 
+            href={'/about'}
+            >
+              <div className={s.mobileFooterLabel}>
+                Reach out →
+              </div>
+            </Link>
 
             <div className={s.mobileFooterText}>
               <div>

@@ -132,7 +132,7 @@ export default function Sidebar(): React.ReactElement {
         <div className={s.mobileTopNavInner}>
           <div className={s.mobileAvatarContainer}>
             <div className={s.mobileAvatar}>
-              <Image src="/surajkmr.png" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatarImage} priority />
+              <Image src="/surajkmr.png" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatar } priority />
             </div>
             <div>
               <div className={s.mobileName}>Suraj Kumar
@@ -150,7 +150,7 @@ export default function Sidebar(): React.ReactElement {
 
         <div className={s.desktopAvatarContainer}>
           <div className={s.desktopAvatar}>
-            <Image src="/surajkmr.png" alt="Suraj Kumar" width={48} height={48} className={s.desktopAvatarImage} priority />
+            <Image src="/surajkmr.png" alt="Suraj Kumar" width={48} height={48} className={s.desktopAvatar} priority />
 
           </div>
 

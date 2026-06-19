@@ -69,13 +69,15 @@ export default function HomePage(): React.ReactElement {
                     </div>
                   </div>
 
-                  <button
+                  <Link
+                    href={'https://x.com/suraj2020kmr'}
+                    target="_blank"
                     type="button"
                     aria-label="Follow on X"
                     className={homePageStyles.calloutCard.button}
                   >
                     Follow
-                  </button>
+                  </Link>
 
                 </div>
               </div>

@@ -50,7 +50,7 @@ const CloseIcon = ({ className, ...props }: IconProps) => (
 );
 
 const ResumeIcon = ({ className, ...props }: IconProps) => (
-   <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} stroke="currentColor" aria-hidden="true" className={className} {...props}>
+  <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} stroke="currentColor" aria-hidden="true" className={className} {...props}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>
 )
@@ -97,7 +97,7 @@ export default function Sidebar(): React.ReactElement {
   }, [isMobileMenuOpen]);
 
 
-  const navItems: { href: string; label: string; Icon: React.ComponentType<IconProps>; isExternal?:boolean}[] = [
+  const navItems: { href: string; label: string; Icon: React.ComponentType<IconProps>; isExternal?: boolean }[] = [
     { href: "/", label: "Home", Icon: HomeIcon },
     { href: "/projects", label: "Projects", Icon: ProjectsIcon },
     // { href: "/experience", label: "Experience", Icon: ExperienceIcon },
@@ -139,7 +139,7 @@ export default function Sidebar(): React.ReactElement {
         <div className={s.mobileTopNavInner}>
           <div className={s.mobileAvatarContainer}>
             <div className={s.mobileAvatar}>
-              <Image src="/surajkmr.png" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatar } priority />
+              <Image src="/superman.jpg" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatar} priority />
             </div>
             <div>
               <div className={s.mobileName}>Suraj Kumar
@@ -157,7 +157,7 @@ export default function Sidebar(): React.ReactElement {
 
         <div className={s.desktopAvatarContainer}>
           <div className={s.desktopAvatar}>
-            <Image src="/surajkmr.png" alt="Suraj Kumar" width={48} height={48} className={s.desktopAvatar} priority />
+            <Image src="/superman.jpg" alt="Suraj Kumar" width={48} height={48} className={s.desktopAvatar} priority />
 
           </div>
 
@@ -173,14 +173,30 @@ export default function Sidebar(): React.ReactElement {
 
         <nav id="desktop-sidebar" className={s.navContainer} aria-label="Primary">
           <ul className={s.navList}>
-            {navItems.map(({ href, label, Icon }) => (
+            {navItems.map(({ href, label, Icon, isExternal }) => (
               <li key={href}>
-                <Link href={href} className={`${s.navItem} ${pathname === href ? s.navItemActive : s.navItemInactive}`} aria-current={
-                  pathname === href ? "page" : undefined
-                }>
-                  <Icon className={s.navIcon} />
-                  <span className={s.navLabel}>{label}</span>
-                </Link>
+                {isExternal ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${s.navItem} ${pathname === href ? s.navItemActive : s.navItemInactive
+                      }`}
+                  >
+                    <Icon className={s.navIcon} />
+                    <span className={s.navLabel}>{label}</span>
+                  </a>
+                ) : (
+                  <Link
+                    href={href}
+                    className={`${s.navItem} ${pathname === href ? s.navItemActive : s.navItemInactive
+                      }`}
+                    aria-current={pathname === href ? "page" : undefined}
+                  >
+                    <Icon className={s.navIcon} />
+                    <span className={s.navLabel}>{label}</span>
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -216,7 +232,7 @@ export default function Sidebar(): React.ReactElement {
             <div className={s.mobileHeaderInner}>
               <div className={s.mobileAvatarContainer}>
                 <div className={s.mobileAvatar}>
-                  <Image src="/surajkmr.png" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatarImage} priority />
+                  <Image src="/superman.jpg" alt="Suraj Kumar" width={40} height={40} className={s.mobileAvatarImage} priority />
 
                 </div>
                 <div>
@@ -246,19 +262,34 @@ export default function Sidebar(): React.ReactElement {
                 Home
               </div>
               <ul className={s.mobileNavList}>
-                {navItems.map(({ href, label, Icon }) =>
+                {navItems.map(({ href, label, Icon, isExternal }) => (
                   <li key={href}>
-                    <Link
-                      href={href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`${s.mobileNavItem} ${pathname === href ? s.navItemActive : s.navItemInactive}`}
-                      aria-label={pathname === href ? "page" : undefined}
-                    >
-                      <Icon className={s.mobileNavIcon} />
-                      <span className={s.mobileNavLabel}>{label}</span>
-                    </Link>
+                    {isExternal ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${s.mobileNavItem} ${pathname === href ? s.navItemActive : s.navItemInactive
+                          }`}
+                      >
+                        <Icon className={s.mobileNavIcon} />
+                        <span className={s.mobileNavLabel}>{label}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${s.mobileNavItem} ${pathname === href ? s.navItemActive : s.navItemInactive
+                          }`}
+                        aria-current={pathname === href ? "page" : undefined}
+                      >
+                        <Icon className={s.mobileNavIcon} />
+                        <span className={s.mobileNavLabel}>{label}</span>
+                      </Link>
+                    )}
                   </li>
-                )}
+                ))}
               </ul>
             </nav>
 
@@ -294,8 +325,8 @@ export default function Sidebar(): React.ReactElement {
 
           </div>
           <div className={s.mobileFooter}>
-            <Link 
-            href={'/contact'}
+            <Link
+              href={'/contact'}
             >
               <div className={s.mobileFooterLabel}>
                 Reach out →
@@ -331,11 +362,11 @@ export default function Sidebar(): React.ReactElement {
               </div>
               <div className={s.bottomNavDivider}></div>
               <button onClick={() => setIsMobileMenuOpen(true)}
-                  className={`${s.bottomMenuButton} mobile-menu-toggle`}
-                  aria-label="Open Menu"
-                >
-                  <MenuIcon className={s.bottomMenuIcon} />
-                
+                className={`${s.bottomMenuButton} mobile-menu-toggle`}
+                aria-label="Open Menu"
+              >
+                <MenuIcon className={s.bottomMenuIcon} />
+
               </button>
             </div>
           </div>

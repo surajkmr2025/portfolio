@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "howIBuilt": ""
     },
     "author": "Suraj Kumar",
-    "authorAvatar": "/surajkmr.png"
+    "authorAvatar": "/superman.jpg"
   },
   {
     "id": "2",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
       "howIBuilt": "",
     },
     "author": "Suraj Kumar",
-    "authorAvatar": "/surajkmr.png"
+    "authorAvatar": "jpg"
   },
   {
     "id": "3",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
       "howIBuilt": ""
     },
     "author": "Suraj Kumar",
-    "authorAvatar": "/surajkmr.png"
+    "authorAvatar": "/superman.jpg"
   },
   {
     "id": "4",
@@ -208,7 +208,7 @@ export const projects: Project[] = [
       "howIBuilt": ""
     },
     "author": "Suraj Kumar",
-    "authorAvatar": "/surajkmr.png"
+    "authorAvatar": "/superman.jpg"
   }
 
 ]

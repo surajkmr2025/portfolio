@@ -131,7 +131,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://github.com/surajkmr2025"
+              href="https://github.com/surajbuild"
               target="_blank"
               rel="noopener noreferrer"
               className={contactPageStyles.contactCard}
@@ -147,7 +147,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className={contactPageStyles.contactLabel}>Github</p>
-                <p className={contactPageStyles.contactValue}>surajkmr2025</p>
+                <p className={contactPageStyles.contactValue}>surajbuild</p>
               </div>
             </a>
           </div>

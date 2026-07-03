@@ -66,7 +66,7 @@ export const projects: Project[] = [
     ],
     "links": {
       "visit": "https://studynotion-frontend-hszz.onrender.com/",
-      "github": "https://github.com/surajkmr2025/studynotion",
+      "github": "https://github.com/surajbuild/studynotion",
       "howIBuilt": ""
     },
     "author": "Suraj Kumar",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     ],
     "links": {
       "visit": "https://paste-app-cyan-three.vercel.app",
-      "github": "https://github.com/surajkmr2025/pasteapp",
+      "github": "https://github.com/surajbuild/pasteapp",
       "howIBuilt": "",
     },
     "author": "Suraj Kumar",
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     ],
     "links": {
       "visit": "",
-      "github": "https://github.com/surajkmr2025/fridgemartsql",
+      "github": "https://github.com/surajbuild/fridgemartsql",
       "howIBuilt": ""
     },
     "author": "Suraj Kumar",
@@ -204,7 +204,7 @@ export const projects: Project[] = [
     ],
     "links": {
       "visit": "https://sitelense-ai.vercel.app",
-      "github": "https://github.com/surajkmr2025/ai-analyzer-.git",
+      "github": "https://github.com/surajbuild/ai-analyzer-.git",
       "howIBuilt": ""
     },
     "author": "Suraj Kumar",

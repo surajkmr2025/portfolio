@@ -110,7 +110,7 @@ export const projects: Project[] = [
       "howIBuilt": "",
     },
     "author": "Suraj Kumar",
-    "authorAvatar": "jpg"
+    "authorAvatar": "/superman.jpg"
   },
   {
     "id": "3",
